@@ -467,6 +467,12 @@ img {
   margin: 0 auto;
 }
 
+.unstyled-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
 h1, h2, h3, h4, h5, h6, p {
   margin: 0 0 0.75em;
 }
@@ -509,19 +515,16 @@ h2 {
 
 .main-header {
   position: absolute;
-  top: 1em;
+  top: 0;
   left: 0;
   right: 0;
+  padding-top: 1em;
 }
 
 .logo {
   width: 25%;
   min-width: 10rem;
   max-width: 15rem;
-}
-
-.main-nav {
-  display: none;
 }
 
 .hero {
@@ -534,6 +537,63 @@ h2 {
 
 .hero-image {
   display: none;
+}
+
+.main-nav {
+  background: #d31869;
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 100%;
+  font-size: 1.2rem;
+  overflow: hidden;
+  transition: all esee-in-out 250ms;
+}
+.main-nav ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  height: 100vh;
+}
+.main-nav ul li {
+  flex: 1 1 auto;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.main-nav ul a {
+  color: white;
+  text-decoration: none;
+}
+.main-nav ul.is-open {
+  left: 0;
+}
+
+.nav-toggle {
+  display: block;
+  padding: 1em;
+  position: absolute;
+  right: 1em;
+  top: 1em;
+  cursor: pointer;
+}
+
+.hamburger, .hamburger::before, .hamburger::after {
+  content: "";
+  display: block;
+  width: 1.5em;
+  height: 3px;
+  background: white;
+}
+
+.hamburger::before {
+  transform: translateY(-8px);
+}
+
+.hamburger::after {
+  transform: translateY(4px);
 }
 
 .btn {

@@ -1,0 +1,54 @@
+.main-nav
+  background: $accent
+  position: absolute
+  top: 0
+  right: 0
+  left: 100%
+  font-size: 1.2rem
+
+  overflow: hidden
+
+  transition: all esee-in-out 250ms
+  ul
+    display: flex
+    flex-direction: column
+    justify-content: space-around
+    text-align: center
+    height: 100vh
+
+    li
+      flex: 1 1 auto
+      border-bottom: 1px solid rgba(0, 0, 0, .15)
+      display: flex
+      align-items: center
+      justify-content: center
+
+    a
+      color: $text-inverse
+      text-decoration: none
+
+    &.is-open
+      left: 0
+
+// Mobile hamburger menu
+
+.nav-toggle
+  display: block
+  padding: 1em
+  position: absolute
+  right: 1em
+  top: 1em
+  cursor: pointer
+
+.hamburger, .hamburger::before, .hamburger::after
+  content: ''
+  display: block
+  width: 1.5em
+  height: 3px
+  background: $white
+
+.hamburger::before
+  transform: translateY(-8px)
+
+.hamburger::after
+  transform: translateY(4px)
